@@ -11,7 +11,7 @@ disabled = true
 
 [cmd_duration]
 min_time = 5000
-format = 'underwent [$duration](bold yellow)'
+format = 'took [$duration](bold yellow)'
 
 [aws]
 disabled = true
@@ -33,17 +33,17 @@ disabled = true
 ignore_branches = ['master', 'main']
 
 [git_status]
-conflicted = '🏳'
-ahead = '🏎💨'
-behind = '😰'
-diverged = '😵'
+conflicted = '🚩'
+ahead = '🚅 x${count}'
+behind = '🐢 x${count}'
+diverged = '🔱🚅 x${ahead_count} 🐢 x${behind_count}'
 up_to_date = ''
-untracked = '🤷'
-stashed = ''
-modified = '📝'
+untracked = '🤷 x${count}'
+stashed = '📦 x${count}'
+modified = '📝 x${count}'
 staged = '[++\($count\)](green)'
 renamed = '👅'
-deleted = '🗑'
+deleted = '🗑x${count}'
 disabled = false
 
 [golang]
@@ -69,3 +69,13 @@ disabled = false
 format = '[$user@]($style)'
 disabled = false
 show_always = true
+
+[time]
+time_format = "%T"
+format = "⏰$time($style) "
+style = "bright-white"
+disabled = false
+
+[nodejs]
+format = "via [🤖 $version](bold green) "
+

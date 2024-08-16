@@ -9,7 +9,7 @@ setopt HIST_IGNORE_ALL_DUPS
 DEVBOX_no_prompt=TRUE
 
 # Devbox global
-#eval "$(devbox global shellenv --init-hook)"
+eval "$(devbox global shellenv --init-hook)"
 
 # Completions
 which devbox >/dev/null && source <(devbox completion zsh)

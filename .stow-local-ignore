@@ -1,12 +1,10 @@
 /.devbox
+/.envrc
+/.git
 /.gitignore
+/.stow-local-ignoare
+/README.md
 /devbox.*
 /install.sh
-/nerdfonts.sh
-/pop-os-tune.sh
-/sync.sh
-/testnerd.sh
 /scripts
-/.git
-/.stow-local-ignoare
-/.envrc
+/sync.sh

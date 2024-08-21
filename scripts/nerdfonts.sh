@@ -8,9 +8,24 @@ fonts=("https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/FiraCod
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/Meslo.zip"
   "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/DejaVuSansMono.zip")
 
+FONTSFOLDER=~/.fonts
+
+unameOut="$(uname -s)"
+
+case "${unameOut}" in
+  Linux*)   machine=Linux;;
+  Darwin*)  machine=Mac;;
+  CYGWIN*)  machine=Cygwin;;
+  *)        machine="UNKNOWN:${unameOut}"
+esac
+
+if [ "${machine}" = "Mac" ]; then
+  FONTSFOLDER=~/Library/Fonts
+fi
+
 INSTALLED=no
 for url in "${fonts[@]}"; do
-  TARGETDIR=~/.fonts/$(basename $url .zip)
+  TARGETDIR=$FONTSFOLDER/$(basename $url .zip)
   if test -d ${TARGETDIR}; then
     echo "[-] Directory already exists ${TARGETDIR}"
   else
@@ -23,12 +38,14 @@ for url in "${fonts[@]}"; do
   fi
 done
 
-if [ $INSTALLED = "si" ]; then
-  # Load font cache
-  echo "[+] Updating font cache"
-  fc-cache -f
-else
-  echo "[-] No new font, no need to update font cache"
+if [ "$machine" = "Linux" ]; then
+  if [ "$INSTALLED" = "si" ]; then
+    # Load font cache
+    echo "[+] Updating font cache"
+    fc-cache -f
+  else
+    echo "[-] No new font, no need to update font cache"
+  fi
 fi
 
 # Finish message

@@ -8,43 +8,15 @@
       "version": "2.4.0",
       "systems": {
         "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/5cgd5m82n1ka610f831z0ji3slm3r1lr-stow-2.4.0",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/5cgd5m82n1ka610f831z0ji3slm3r1lr-stow-2.4.0"
         },
         "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/9z890bhpn0rix5kf3kx3hhabh4jjgg33-stow-2.4.0",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/9z890bhpn0rix5kf3kx3hhabh4jjgg33-stow-2.4.0"
         },
         "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/x6xbafdzv61gqi93wjbdb17fdr9bnm0i-stow-2.4.0",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/x6xbafdzv61gqi93wjbdb17fdr9bnm0i-stow-2.4.0"
         },
         "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/r4vsnj2ncnv12q7mjzllirvxviy0h4i5-stow-2.4.0",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/r4vsnj2ncnv12q7mjzllirvxviy0h4i5-stow-2.4.0"
         }
       }
@@ -56,44 +28,36 @@
       "version": "1.5.6",
       "systems": {
         "aarch64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/csinic7gd7ln27bys5m3lhr3nr0wqwc1-teller-1.5.6",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/csinic7gd7ln27bys5m3lhr3nr0wqwc1-teller-1.5.6"
         },
         "aarch64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/v6zv4xvvc29l8ny86hkir7bzgafwgi4v-teller-1.5.6",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/v6zv4xvvc29l8ny86hkir7bzgafwgi4v-teller-1.5.6"
         },
         "x86_64-darwin": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/q5k0fb4bwi1v64rsjy2kdlbh8h51b8kl-teller-1.5.6",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/q5k0fb4bwi1v64rsjy2kdlbh8h51b8kl-teller-1.5.6"
         },
         "x86_64-linux": {
-          "outputs": [
-            {
-              "name": "out",
-              "path": "/nix/store/2r6xiywzp38nbw6vay8r4y6fy2wn2d27-teller-1.5.6",
-              "default": true
-            }
-          ],
           "store_path": "/nix/store/2r6xiywzp38nbw6vay8r4y6fy2wn2d27-teller-1.5.6"
+        }
+      }
+    },
+    "wget@latest": {
+      "last_modified": "2024-08-19T06:06:21Z",
+      "resolved": "github:NixOS/nixpkgs/e9b5094b8f6e06a46f9f53bb97a9573b7cedf2a2#wget",
+      "source": "devbox-search",
+      "version": "1.24.5",
+      "systems": {
+        "aarch64-darwin": {
+          "store_path": "/nix/store/1wqbv9qs5vrb9gh3ikxvg94gc7aq62wf-wget-1.24.5"
+        },
+        "aarch64-linux": {
+          "store_path": "/nix/store/mrw1aar3as8acj3yfjqan8gnkxyr8zp9-wget-1.24.5"
+        },
+        "x86_64-darwin": {
+          "store_path": "/nix/store/db0xh4nl91s0qdldj126nl5y21vx27j7-wget-1.24.5"
+        },
+        "x86_64-linux": {
+          "store_path": "/nix/store/irizdykhk5v364jwj3xlhy0q5gx1m87b-wget-1.24.5"
         }
       }
     }

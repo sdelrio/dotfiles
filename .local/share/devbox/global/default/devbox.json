@@ -26,7 +26,8 @@
     "magic-wormhole@latest",
     "cookiecutter@latest",
     "copier@latest",
-    "gum@latest"
+    "gum@latest",
+    "tig@2.5.9"
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",

@@ -7,6 +7,7 @@ test -L ~/.zshrc || rm -f ~/.zshrc
 
 checkdir=(~/.local/bin
   ~/.local/share/devbox/global/default
+  ~/.config/tig
   ~/.config/direnv)
 
 for mydir in "${checkdir[@]}"; do

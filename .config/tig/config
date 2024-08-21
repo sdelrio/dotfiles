@@ -1,0 +1,5 @@
+bind main ! !?git revert %(commit)
+set main-view-date-display = relative-compact
+set main-view-author-display = abbreviated
+set blame-view-author-display = abbreviated
+set blame-view-date-display = relative-compact

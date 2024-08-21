@@ -25,12 +25,17 @@ disabled = true
 
 [directory]
 truncate_to_repo = true
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style)"
 
 [docker_context]
 disabled = true
 
 [git_branch]
 ignore_branches = ['master', 'main']
+format = " [$symbol$branch]($style) "
+symbol = "🍣 "
+style = "bold yellow"
 
 [git_status]
 conflicted = '🚩'
@@ -61,14 +66,14 @@ format = 'via [$symbol$state](bold purple) '
 disabled = false
 
 [hostname]
-ssh_only = false
-format = '[$hostname](bold dimmed green) '
+ssh_only = true
+format = '[$hostname](bold dimmed white) '
 disabled = false
  
 [username]
 format = '[$user@]($style)'
-disabled = false
-show_always = true
+disabled = true
+show_always = false
 
 [time]
 time_format = "%T"

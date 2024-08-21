@@ -3,7 +3,7 @@
 # teller env > .config/fabric/.env
 
 # stow won't overwrite existing files
-test -L ~/.zshrc.sh || rm -f ~/.zshrc
+test -L ~/.zshrc || rm -f ~/.zshrc
 
 checkdir=(~/.local/bin
   ~/.local/share/devbox/global/default

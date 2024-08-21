@@ -29,7 +29,7 @@ alias l='ls -lah'
 alias ll='ls -lh'
 alias cat='bat --paging never --theme DarkNeon --style plain'
 alias zssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
-
+alias dr='eval "$(devbox global shellenv --recompute)";refresh-global'
 
 # PATH
 export PATH="/usr/local/bin:$PATH"

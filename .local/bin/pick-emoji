@@ -4,11 +4,23 @@ set -euo pipefail
 EMOJI="$(sed '1,/^### DATA ###$/d' $0 | fzf --no-multi --reverse --bind enter:accept-or-print-query | cut -d ' ' -f 1 | tr -d '\n')"
 echo "$EMOJI"
 
-case "${XDG_SESSION_TYPE}" in
-  wayland*)  wl-copy "${EMOJI}";;
-  x11*)      echo -n "${EMOJI}" | xclip;;
-  *)         echo -n "${EMOJI}" | pbcopy
+unameOut="$(uname -s)"
+
+case "${unameOut}" in
+  Linux*)   machine=Linux;;
+  Darwin*)  machine=Mac;;
+  CYGWIN*)  machine=Cygwin;;
+  *)        machine="UNKNOWN:${unameOut}"
 esac
+
+if [ "${machine}" = "Mac" ]; then
+  echo -n "${EMOJI}" | pbcopy
+else
+  case "${XDG_SESSION_TYPE}" in
+    wayland*)  wl-copy "${EMOJI}";;
+    x11*)      echo -n "${EMOJI}" | xclip;;
+  esac
+fi
 
 exit 0
 ### DATA ###

@@ -26,10 +26,34 @@ disabled = true
 [directory]
 truncate_to_repo = true
 truncation_length = 5
-format = "[$path]($style)[$lock_symbol]($lock_style)"
+format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [docker_context]
 disabled = true
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+symbol = '☸'
+detect_env_vars = [ 'KUBECONFIG' ]
+[[kubernetes.contexts]]
+context_pattern = "docker-desktop"
+context_alias = "dd"
+[[kubernetes.contexts]]
+context_pattern = ".*db0c4270.*"
+context_alias = "imk-1"
+[[kubernetes.contexts]]
+context_pattern = ".*88737394.*"
+context_alias = "imk-2"
+[[kubernetes.contexts]]
+context_pattern = ".*7f7eb57d*"
+context_alias = "fug-0"
+[[kubernetes.contexts]]
+context_pattern = ".*fuji-ug2-80c0b34e/*"
+context_alias = "fug-2"
+[[kubernetes.contexts]]
+context_pattern = ".*87fcd580*"
+context_alias = "dev-3"
 
 [git_branch]
 ignore_branches = ['master', 'main']
@@ -54,13 +78,11 @@ disabled = false
 [golang]
 disabled = true
 
-[kubernetes]
-disabled = false
-
 [nix_shell]
 disabled = false
 impure_msg = 'devbox'
 format = 'via [$symbol$state](bold purple) '
+symbol =  '☃️ '
 
 [sudo]
 disabled = false
@@ -76,10 +98,11 @@ disabled = true
 show_always = false
 
 [time]
-time_format = "%T"
+disabled = false
+time_format = "%R"
 format = "⏰$time($style) "
 style = "bright-white"
-disabled = false
+time_range = '16:40:00-17:20:00'
 
 [nodejs]
 format = "via [🤖 $version](bold green) "

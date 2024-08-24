@@ -20,7 +20,7 @@ which kubectl >/dev/null && source <(kubectl completion zsh)
 eval "$(starship init zsh)"
 
 # Zoxide: a smarter cd command
-eval "$(zoxide init --cmd cd zsh)"
+which zoxide >/dev/null && eval "$(zoxide init --cmd cd zsh)"
 
 # Aliases
 alias glo='git log --decorate --oneline --graph'
@@ -31,7 +31,16 @@ alias cat='bat --paging never --theme DarkNeon --style plain'
 alias zssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias dr='eval "$(devbox global shellenv --recompute)";refresh-global'
 
+# ENV files
+
+# User configuration (Done here to allow for overriding oh-my-zsh configuration)
+
+if [ -e $HOME/.zshrc-env-config ]; then
+   source $HOME/.zshrc-env-config
+fi
+
 # PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
 

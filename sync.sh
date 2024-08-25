@@ -7,6 +7,8 @@ test -L ~/.zshrc || rm -f ~/.zshrc
 
 checkdir=(~/.local/bin
   ~/.local/share/devbox/global/default
+  ~/.local/share/devbox/global/default/bash
+  ~/.local/share/devbox/global/default/zsh
   ~/.config/kitty
   ~/.config/tig
   ~/.config/direnv)

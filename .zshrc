@@ -16,12 +16,6 @@ which devbox >/dev/null && source <(devbox completion zsh)
 which docker >/dev/null && source <(docker completion zsh)
 which kubectl >/dev/null && source <(kubectl completion zsh)
 
-# Starship
-eval "$(starship init zsh)"
-
-# Zoxide: a smarter cd command
-which zoxide >/dev/null && eval "$(zoxide init --cmd cd zsh)"
-
 # Aliases
 alias glo='git log --decorate --oneline --graph'
 alias ls='ls --color=auto -F'
@@ -42,5 +36,4 @@ fi
 # PATH
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
 

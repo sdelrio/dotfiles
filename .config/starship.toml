@@ -46,6 +46,9 @@ context_alias = "imk-1"
 context_pattern = ".*88737394.*"
 context_alias = "imk-2"
 [[kubernetes.contexts]]
+context_pattern = ".*a5eeeab5.*"
+context_alias = "imk-3"
+[[kubernetes.contexts]]
 context_pattern = ".*7f7eb57d*"
 context_alias = "fug-0"
 [[kubernetes.contexts]]

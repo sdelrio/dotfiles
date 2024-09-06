@@ -57,6 +57,9 @@ context_alias = "fug-2"
 [[kubernetes.contexts]]
 context_pattern = ".*87fcd580*"
 context_alias = "dev-3"
+[[kubernetes.contexts]]
+context_pattern = ".*a4ba6d5c.*"
+context_alias = "fug-dev1"
 
 [git_branch]
 ignore_branches = ['master', 'main']

@@ -9,6 +9,7 @@
     "vscode@latest",
     "jq@latest",
     "yq@latest",
+    "lazygit@latest",
     "neovim@latest",
     "neofetch@latest",
     "btop@latest",

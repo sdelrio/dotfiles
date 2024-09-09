@@ -52,7 +52,7 @@ context_alias = "imk-3"
 context_pattern = ".*7f7eb57d*"
 context_alias = "fug-0"
 [[kubernetes.contexts]]
-context_pattern = ".*fuji-ug2-80c0b34e/*"
+context_pattern = ".*80c0b34e*"
 context_alias = "fug-2"
 [[kubernetes.contexts]]
 context_pattern = ".*87fcd580*"

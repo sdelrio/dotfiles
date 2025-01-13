@@ -28,6 +28,8 @@
     "cookiecutter@latest",
     "copier@latest",
     "gum@latest",
+    "ncdu@latest",
+    "terraform@1.10.3",
     "tig@2.5.9"
   ],
   "env": {

@@ -30,6 +30,10 @@
     "gum@latest",
     "ncdu@latest",
     "terraform@1.10.3",
+    "jwt-cli@latest",
+    "vector@latest",
+    "kubernetes-helm@3.14.4",
+    "chart-testing@3.11.0",
     "tig@2.5.9"
   ],
   "env": {

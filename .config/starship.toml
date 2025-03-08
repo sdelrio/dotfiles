@@ -55,7 +55,7 @@ context_alias = "fug-0"
 context_pattern = ".*e2fc8734.*"
 context_alias = "fug-2"
 [[kubernetes.contexts]]
-context_pattern = ".*15e090d9.*"
+context_pattern = ".*b519e4f4f9c8"
 context_alias = "dev-2"
 [[kubernetes.contexts]]
 context_pattern = ".*87fcd580.*"
@@ -69,6 +69,21 @@ context_alias = "tak"
 [[kubernetes.contexts]]
 context_pattern = ".*3377b908.*"
 context_alias = "acu-2"
+[[kubernetes.contexts]]
+context_pattern = ".*e02058bbb956"
+context_alias = "ni-fl-int"
+[[kubernetes.contexts]]
+context_pattern = ".*6379f6e8a3a2"
+context_alias = "acu1"
+[[kubernetes.contexts]]
+context_pattern = ".*dffa9f322394"
+context_alias = "acu-ug"
+[[kubernetes.contexts]]
+context_pattern = ".*3e7ed06cbd83"
+context_alias = "ta01"
+[[kubernetes.contexts]]
+context_pattern = ".*8346583b6b78"
+context_alias = "ta02"
 
 [git_branch]
 ignore_branches = ['master', 'main']

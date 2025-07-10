@@ -79,11 +79,20 @@ context_alias = "acu1"
 context_pattern = ".*dffa9f322394"
 context_alias = "acu-ug"
 [[kubernetes.contexts]]
-context_pattern = ".*3e7ed06cbd83"
+context_pattern = ".*f58de2c46d83"
 context_alias = "ta01"
 [[kubernetes.contexts]]
-context_pattern = ".*8346583b6b78"
+context_pattern = ".*fd15ea46e261"
 context_alias = "ta02"
+[[kubernetes.contexts]]
+context_pattern = ".*1edcb792fcf6"
+context_alias = "ta03"
+[[kubernetes.contexts]]
+context_pattern = ".*80880dc1e141"
+context_alias = "ta04"
+[[kubernetes.contexts]]
+context_pattern = ".*e7e55858da3a"
+context_alias = "ta08"
 
 [git_branch]
 ignore_branches = ['master', 'main']

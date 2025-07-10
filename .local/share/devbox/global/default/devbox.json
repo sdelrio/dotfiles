@@ -36,6 +36,7 @@
     "colima@0.8.1",
     "lima@1.1.1",
     "lima-additional-guestagents@1.1.1",
+    "kind@0.29.0",
     "chart-testing@3.11.0",
     "tig@2.5.9"
   ],

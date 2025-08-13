@@ -14,7 +14,11 @@ eval "$(devbox global shellenv --init-hook)"
 # Completions
 which devbox >/dev/null && source <(devbox completion zsh)
 which docker >/dev/null && source <(docker completion zsh)
-which kubectl >/dev/null && source <(kubectl completion zsh)
+#which kubectl >/dev/null && source <(kubectl completion zsh)
+## https://github.com/junegunn/fzf/wiki/examples#kubectl
+command -v fzf >/dev/null 2>&1 && {
+	source <(kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g')
+}
 
 # Aliases
 alias glo='git log --decorate --oneline --graph'
@@ -25,6 +29,7 @@ alias lg='lazygit'
 alias cat='bat --paging never --theme DarkNeon --style plain'
 alias zssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias dr='eval "$(devbox global shellenv --recompute)";refresh-global'
+alias k='kubectl'
 
 # ENV files
 

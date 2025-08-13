@@ -9,6 +9,7 @@
     "vscode@latest",
     "jq@latest",
     "yq@latest",
+    "yamllint@latest",
     "lazygit@latest",
     "neovim@latest",
     "neofetch@latest",
@@ -38,6 +39,8 @@
     "lima-additional-guestagents@1.1.1",
     "kind@0.29.0",
     "chart-testing@3.11.0",
+    "krelay@0.1.2",
+    "krew@latest",
     "tig@2.5.9"
   ],
   "env": {

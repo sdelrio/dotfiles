@@ -19,7 +19,7 @@
     "tree-sitter@latest",
     "nodejs@latest",
     "python3Full@latest",
-    "eza@latest",
+    "eza@0.23.0",
     "bat@0.25.0",
     "atuin@0.10.0",
     "zoxide@latest",

@@ -20,7 +20,7 @@
     "nodejs@latest",
     "python3Full@latest",
     "eza@latest",
-    "bat@latest",
+    "bat@0.25.0",
     "atuin@latest",
     "zoxide@latest",
     "direnv@latest",

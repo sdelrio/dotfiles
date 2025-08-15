@@ -23,7 +23,7 @@
     "bat@0.25.0",
     "atuin@latest",
     "zoxide@latest",
-    "direnv@latest",
+    "direnv@2.37.1",
     "starship@latest",
     "magic-wormhole@latest",
     "cookiecutter@1.7.3",

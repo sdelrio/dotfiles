@@ -1,51 +1,51 @@
 {
   "lockfile_version": "1",
   "packages": {
-    "stow@2.4.0": {
-      "last_modified": "2024-10-13T23:44:06Z",
-      "resolved": "github:NixOS/nixpkgs/d4f247e89f6e10120f911e2e2d2254a050d0f732#stow",
+    "stow@2.4.1": {
+      "last_modified": "2025-07-28T17:09:23Z",
+      "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#stow",
       "source": "devbox-search",
-      "version": "2.4.0",
+      "version": "2.4.1",
       "systems": {
         "aarch64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/lcql7s3jfb4laqpnvmm07sk59i5lcv7r-stow-2.4.0",
+              "path": "/nix/store/kx9jb5cb7ipqvdq798si9r0cgbnl6ckm-stow-2.4.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/lcql7s3jfb4laqpnvmm07sk59i5lcv7r-stow-2.4.0"
+          "store_path": "/nix/store/kx9jb5cb7ipqvdq798si9r0cgbnl6ckm-stow-2.4.1"
         },
         "aarch64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/dinqdf6018i3r56ljri829nb5gd8k85b-stow-2.4.0",
+              "path": "/nix/store/1p8bi1f906mj29zrh83qjpvb81wyxgbp-stow-2.4.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/dinqdf6018i3r56ljri829nb5gd8k85b-stow-2.4.0"
+          "store_path": "/nix/store/1p8bi1f906mj29zrh83qjpvb81wyxgbp-stow-2.4.1"
         },
         "x86_64-darwin": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/r1cm7yppm6ljypvvfhwvj5q09pmfy0kh-stow-2.4.0",
+              "path": "/nix/store/3zlcjr9pgx7hxmhpwq4iyv52fifjs0jp-stow-2.4.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/r1cm7yppm6ljypvvfhwvj5q09pmfy0kh-stow-2.4.0"
+          "store_path": "/nix/store/3zlcjr9pgx7hxmhpwq4iyv52fifjs0jp-stow-2.4.1"
         },
         "x86_64-linux": {
           "outputs": [
             {
               "name": "out",
-              "path": "/nix/store/fs2wj1q90gdpf74hyybc5dywb2807z1z-stow-2.4.0",
+              "path": "/nix/store/221ym4dvpwniybhx1hlnbn0yajsq1y92-stow-2.4.1",
               "default": true
             }
           ],
-          "store_path": "/nix/store/fs2wj1q90gdpf74hyybc5dywb2807z1z-stow-2.4.0"
+          "store_path": "/nix/store/221ym4dvpwniybhx1hlnbn0yajsq1y92-stow-2.4.1"
         }
       }
     },

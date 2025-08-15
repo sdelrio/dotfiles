@@ -13,7 +13,7 @@
     "lazygit@latest",
     "neovim@latest",
     "neofetch@latest",
-    "btop@latest",
+    "btop@1.4.4",
     "cheat@latest",
     "bash-preexec@latest",
     "tree-sitter@latest",

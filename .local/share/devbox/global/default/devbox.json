@@ -26,7 +26,7 @@
     "direnv@latest",
     "starship@latest",
     "magic-wormhole@latest",
-    "cookiecutter@latest",
+    "cookiecutter@1.7.3",
     "copier@latest",
     "gum@latest",
     "ncdu@latest",

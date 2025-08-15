@@ -2,7 +2,7 @@
   "packages": [
     "git@latest",
     "htop@latest",
-    "gh@latest",
+    "gh@2.76.2",
     "glab@latest",
     "fzf@latest",
     "ripgrep@latest",

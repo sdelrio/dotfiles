@@ -15,7 +15,7 @@
     "neofetch@latest",
     "btop@1.4.4",
     "cheat@latest",
-    "bash-preexec@latest",
+    "bash-preexec@0.6.0",
     "tree-sitter@latest",
     "nodejs@latest",
     "python3Full@latest",

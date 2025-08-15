@@ -41,7 +41,7 @@
     "chart-testing@3.11.0",
     "krelay@0.1.2",
     "krew@latest",
-    "tig@2.5.9"
+    "tig@2.5.12"
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",

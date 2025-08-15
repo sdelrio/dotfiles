@@ -21,7 +21,7 @@
     "python3Full@latest",
     "eza@latest",
     "bat@0.25.0",
-    "atuin@latest",
+    "atuin@0.10.0",
     "zoxide@latest",
     "direnv@latest",
     "starship@latest",

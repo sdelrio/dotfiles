@@ -49,23 +49,51 @@
         }
       }
     },
-    "teller@1.5.6": {
-      "last_modified": "2024-05-22T06:18:38Z",
-      "resolved": "github:NixOS/nixpkgs/3f316d2a50699a78afe5e77ca486ad553169061e#teller",
+    "teller@2.0.7": {
+      "last_modified": "2025-07-28T17:09:23Z",
+      "resolved": "github:NixOS/nixpkgs/648f70160c03151bc2121d179291337ad6bc564b#teller",
       "source": "devbox-search",
-      "version": "1.5.6",
+      "version": "2.0.7",
       "systems": {
         "aarch64-darwin": {
-          "store_path": "/nix/store/csinic7gd7ln27bys5m3lhr3nr0wqwc1-teller-1.5.6"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/01swcg5h5ip20mk4s21pm8w61742hk5k-teller-2.0.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/01swcg5h5ip20mk4s21pm8w61742hk5k-teller-2.0.7"
         },
         "aarch64-linux": {
-          "store_path": "/nix/store/v6zv4xvvc29l8ny86hkir7bzgafwgi4v-teller-1.5.6"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/45n1jjwzxxk8cas26bfvncx1rd3wcx1j-teller-2.0.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/45n1jjwzxxk8cas26bfvncx1rd3wcx1j-teller-2.0.7"
         },
         "x86_64-darwin": {
-          "store_path": "/nix/store/q5k0fb4bwi1v64rsjy2kdlbh8h51b8kl-teller-1.5.6"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/b70bwm6ydxnagr1g7ahklx84hr5myj3s-teller-2.0.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/b70bwm6ydxnagr1g7ahklx84hr5myj3s-teller-2.0.7"
         },
         "x86_64-linux": {
-          "store_path": "/nix/store/2r6xiywzp38nbw6vay8r4y6fy2wn2d27-teller-1.5.6"
+          "outputs": [
+            {
+              "name": "out",
+              "path": "/nix/store/s79rmzwqr74vd34mky9x75nmlr21qbgb-teller-2.0.7",
+              "default": true
+            }
+          ],
+          "store_path": "/nix/store/s79rmzwqr74vd34mky9x75nmlr21qbgb-teller-2.0.7"
         }
       }
     },

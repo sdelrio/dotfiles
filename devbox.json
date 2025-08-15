@@ -3,7 +3,7 @@
   "packages": [
     "wget@latest",
     "teller@2.0.7",
-    "stow@2.4.0"
+    "stow@2.4.1"
   ],
   "shell": {
     "init_hook": [

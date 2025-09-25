@@ -41,6 +41,7 @@
     "chart-testing@3.11.0",
     "krelay@0.1.2",
     "krew@latest",
+    "kubectl-klock@0.8.2",
     "tig@2.5.12"
   ],
   "env": {

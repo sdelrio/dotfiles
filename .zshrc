@@ -43,6 +43,9 @@ fi
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
+# To be able to install NPM packages globally with nix
+export PATH="$HOME/.npm-packages/bin:$PATH"
+export NODE_PATH="$HOME/.npm-packagges/lib/node_modules"
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.cache/lm-studio/bin"

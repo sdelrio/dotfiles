@@ -11,7 +11,7 @@
     "yq@latest",
     "yamllint@latest",
     "lazygit@latest",
-    "neovim@latest",
+    "neovim@0.10.4",
     "neofetch@latest",
     "btop@1.4.4",
     "cheat@latest",

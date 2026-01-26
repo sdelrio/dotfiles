@@ -2,6 +2,19 @@
 
 add_newline = true
 
+[env_var.KUBECONFIG]
+default = ""
+detect_env_vars = ['KUBECONFIG']
+format = ""
+#format = "debugK: [$env_value]($style) "
+
+
+[custom.kubeconfig_basename]
+command = "echo ${KUBECONFIG##*/} | sed 's/\\.cfg$//'"
+when = 'test -n "$KUBECONFIG"'
+format = "[☸$output]($style) "
+style = "green"
+
 [character]
 success_symbol = '[➜](bold green)'
 error_symbol = '[✗](bold red)'
@@ -33,66 +46,16 @@ disabled = true
 
 [kubernetes]
 disabled = false
-format = '[$symbol$context( \($namespace\))]($style) '
+format = '[$symbol]($style) [$context( \($namespace\))]($style) '
 symbol = '☸'
 detect_env_vars = [ 'KUBECONFIG' ]
 [[kubernetes.contexts]]
+context_pattern = ".*[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}"
+context_alias = "🆔 "
+style = "green"
+[[kubernetes.contexts]]
 context_pattern = "docker-desktop"
 context_alias = "dd"
-[[kubernetes.contexts]]
-context_pattern = ".*c4273f6f.*"
-context_alias = "imk-1"
-[[kubernetes.contexts]]
-context_pattern = ".*88737394.*"
-context_alias = "imk-2"
-[[kubernetes.contexts]]
-context_pattern = ".*a5eeeab5.*"
-context_alias = "imk-3"
-[[kubernetes.contexts]]
-context_pattern = ".*7f7eb57d.*"
-context_alias = "fug-0"
-[[kubernetes.contexts]]
-context_pattern = ".*e2fc8734.*"
-context_alias = "fug-2"
-[[kubernetes.contexts]]
-context_pattern = ".*b519e4f4f9c8"
-context_alias = "dev-2"
-[[kubernetes.contexts]]
-context_pattern = ".*87fcd580.*"
-context_alias = "dev-3"
-[[kubernetes.contexts]]
-context_pattern = ".*a4ba6d5c.*"
-context_alias = "fug-1"
-[[kubernetes.contexts]]
-context_pattern = ".*ffd57d91.*"
-context_alias = "tak"
-[[kubernetes.contexts]]
-context_pattern = ".*3377b908.*"
-context_alias = "acu-2"
-[[kubernetes.contexts]]
-context_pattern = ".*e02058bbb956"
-context_alias = "ni-fl-int"
-[[kubernetes.contexts]]
-context_pattern = ".*6379f6e8a3a2"
-context_alias = "acu1"
-[[kubernetes.contexts]]
-context_pattern = ".*dffa9f322394"
-context_alias = "acu-ug"
-[[kubernetes.contexts]]
-context_pattern = ".*72d5ef668e20"
-context_alias = "ta01"
-[[kubernetes.contexts]]
-context_pattern = ".*fd15ea46e261"
-context_alias = "ta02"
-[[kubernetes.contexts]]
-context_pattern = ".*1edcb792fcf6"
-context_alias = "ta03"
-[[kubernetes.contexts]]
-context_pattern = ".*80880dc1e141"
-context_alias = "ta04"
-[[kubernetes.contexts]]
-context_pattern = ".*e7e55858da3a"
-context_alias = "ta08"
 
 [git_branch]
 ignore_branches = ['master', 'main']

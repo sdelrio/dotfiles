@@ -44,6 +44,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 
 # To be able to install NPM packages globally with nix
+# $ cat  ~/.npmrc
+# prefix=~/.npm-packages
 export PATH="$HOME/.npm-packages/bin:$PATH"
 export NODE_PATH="$HOME/.npm-packagges/lib/node_modules"
 

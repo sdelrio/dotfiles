@@ -9,6 +9,7 @@
     "colima@0.8.1",
     "cookiecutter@1.7.3",
     "copier@latest",
+    "delta@0.18.2",
     "eza@0.23.0",
     "fzf@latest",
     "gh@2.76.2",

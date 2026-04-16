@@ -9,7 +9,6 @@
     "colima@0.8.1",
     "cookiecutter@1.7.3",
     "copier@latest",
-    "direnv@2.37.1",
     "eza@0.23.0",
     "fzf@latest",
     "gh@2.76.2",
@@ -32,6 +31,7 @@
     "lima@1.1.1",
     "timoni@latest",
     "magic-wormhole@latest",
+    "minio-client@2025-08-13T08-35-41Z",
     "ncdu@latest",
     "neofetch@latest",
     "neovim@0.10.4",
@@ -73,7 +73,7 @@
       "curl -fsSL https://devbox.getfleek.dev/config/starship/starship.toml > $HOME/.config/starship.toml",
       "fi"
     ],
-    "latest-hash": ["curl -fsSL https://nixos.org/channels/nixos-unstable/git-revision"],
+    "latest-hash": ["curl -fsSL https://nixos.org/channels/nixos-25.11/git-revision"],
     "npm-global": [
       "grep -qF '.npm-packages' ~/.npmrc || echo 'prefix=~/.npm-packages' >> ~/.npmrc",
       "grep -qF '.npm-packages' ~/.zshrc || echo 'export PATH=$PATH:~/.npm-packages/bin' >> ~/.zshrc",

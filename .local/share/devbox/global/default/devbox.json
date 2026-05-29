@@ -25,6 +25,7 @@
     "jq@latest",
     "jwt-cli@latest",
     "k0sctl@0.28.0",
+    "k9s@latest",
     "kind@0.29.0",
     "krelay@0.1.2",
     "krew@latest",
@@ -58,7 +59,8 @@
   ],
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",
-    "DEVBOX_GLOBAL_ROOT":   "$HOME/.local/share/devbox/global/current"
+    "DEVBOX_GLOBAL_ROOT":   "$HOME/.local/share/devbox/global/current",
+    "PATH":                 "$HOME/.local/bin:$PATH"
   },
   "shell": {"init_hook": [". ${DEVBOX_GLOBAL_ROOT}/init.sh"], "scripts": {
     "install-astro": [

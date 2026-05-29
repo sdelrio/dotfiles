@@ -49,6 +49,7 @@
     "terraform@1.10.3",
     "tig@2.5.12",
     "tree-sitter@latest",
+    "uv@latest",
     "vector@latest",
     "vscode@latest",
     "yamllint@latest",

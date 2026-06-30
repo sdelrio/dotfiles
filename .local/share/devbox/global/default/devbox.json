@@ -51,7 +51,7 @@
     "tig@2.5.12",
     "tree-sitter@latest",
     "uv@latest",
-    "vector@latest",
+    "vector@0.56.0",
     "vscode@latest",
     "yamllint@latest",
     "yq@latest",

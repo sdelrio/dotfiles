@@ -60,7 +60,7 @@
   "env": {
     "DEVBOX_GLOBAL_PREFIX": "$HOME/.local/share/devbox/global/default/.devbox/nix/profile/default",
     "DEVBOX_GLOBAL_ROOT":   "$HOME/.local/share/devbox/global/current",
-    "PATH":                 "$HOME/.local/bin:$PATH"
+    "PATH":                 "$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
   },
   "shell": {"init_hook": [". ${DEVBOX_GLOBAL_ROOT}/init.sh"], "scripts": {
     "install-astro": [

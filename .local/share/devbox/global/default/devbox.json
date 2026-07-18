@@ -49,7 +49,7 @@
     "starship@latest",
     "terraform@1.15.3",
     "tig@2.5.12",
-    "tree-sitter@latest",
+    "tree-sitter@0.26.9",
     "uv@latest",
     "vscode@latest",
     "yamllint@latest",

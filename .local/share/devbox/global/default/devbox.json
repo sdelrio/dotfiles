@@ -52,7 +52,7 @@
     "tree-sitter@latest",
     "uv@latest",
     "vscode@latest",
-    "yamllint@latest",
+    "yamllint@1.37.1",
     "yq@latest",
     "zoxide@latest"
   ],

@@ -40,7 +40,7 @@
     "minio-client@2025-08-13T08-35-41Z",
     "mise@latest",
     "television@latest",
-    "ncdu@latest",
+    "ncdu@2.9.2",
     "neofetch@latest",
     "neovim@0.10.4",
     "nodejs@24.11.1",

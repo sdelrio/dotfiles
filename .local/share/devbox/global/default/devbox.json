@@ -41,7 +41,7 @@
     "mise@latest",
     "television@latest",
     "ncdu@latest",
-    "neofetch@latest",
+    "neofetch@7.1.0",
     "neovim@0.10.4",
     "nodejs@24.11.1",
     "python3Full@latest",

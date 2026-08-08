@@ -21,6 +21,34 @@ command -v fzf >/dev/null 2>&1 && {
 }
 
 # Git Aliases
+
+## Historic view from a file, with commit, date, user, message and diff lines
+ghist() {
+  local count="${2:-5}"
+  git log "-$count" --format="%h %ad %an | %s" -p --diff-filter=M --follow -- "$1" | grep -E "^([a-f0-9]+ |^[+-][^+-])" | while IFS= read -r line; do
+    case "$line" in
+      [a-f0-9]*)
+        hash="${line%% *}"
+        rest="${line#* }"
+        msg="${rest##* | }"
+        rest="${rest% | *}"
+        user="${rest##* }"
+        date="${rest% $user}"
+        echo -e "\033[33m$hash\033[0m \033[90m$date\033[0m \033[36m$user\033[0m | \033[37m$msg\033[0m"
+        ;;
+      +*)
+        echo -e "\033[32m$line\033[0m"
+        ;;
+      -*)
+        echo -e "\033[31m$line\033[0m"
+        ;;
+      *)
+        echo "$line"
+        ;;
+    esac
+  done
+}
+
 alias glo='git log --decorate --oneline --graph'
 alias lg='lazygit'
 alias gc="git commit -m"

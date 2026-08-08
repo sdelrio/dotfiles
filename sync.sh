@@ -9,15 +9,18 @@ checkdir=(~/.local/bin
   ~/.local/share/devbox/global/default
   ~/.local/share/devbox/global/default/bash
   ~/.local/share/devbox/global/default/zsh
+  ~/.config/herdr
   ~/.config/kitty
-  ~/.config/wezterm
   ~/.config/tig
-  ~/.config/direnv)
+  ~/.config/direnv
+  ~/.config/wezterm)
 
 for mydir in "${checkdir[@]}"; do
   echo ${mydir}
   test -d ${mydir} || mkdir -p ${mydir}
 done
+
+ln -s ~/.config/wezterm/wezterm.lua $(pwd)/.config/wezterm/wezterm.lua 2>/dev/null
 
 # perl lang so it doesn't pop up when using es_ES.UTF-8 on first call
 export LC_ALL=C

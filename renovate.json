@@ -3,6 +3,9 @@
   "extends": [
     "config:recommended"
   ],
+  "ignoreDeps": [
+    "terraform@1.15.8"
+  ],
   "packageRules": [
     {
       "enabled": false,

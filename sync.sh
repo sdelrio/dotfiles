@@ -10,6 +10,7 @@ checkdir=(~/.local/bin
   ~/.local/share/devbox/global/default/bash
   ~/.local/share/devbox/global/default/zsh
   ~/.config/kitty
+  ~/.config/wezterm
   ~/.config/tig
   ~/.config/direnv)
 
@@ -21,5 +22,5 @@ done
 # perl lang so it doesn't pop up when using es_ES.UTF-8 on first call
 export LC_ALL=C
 # symlinks to parent folder, '--target=dir' if want to change
-stow .
+stow . --verbose=1
 

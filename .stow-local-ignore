@@ -2,9 +2,13 @@
 /.envrc
 /.git
 /.gitignore
-/.stow-local-ignoare
+/.stow-local-ignore
+/.vscode
 /README.md
 /devbox.*
 /install.sh
 /scripts
 /sync.sh
+/xstow.ini
+/renovate.json
+/DS_Store

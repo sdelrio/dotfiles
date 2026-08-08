@@ -46,7 +46,7 @@
     "nodejs@24.11.1",
     "python3Full@latest",
     "ripgrep@latest",
-    "starship@latest",
+    "starship@0.58.0",
     "terraform@1.15.8",
     "tig@2.5.12",
     "tree-sitter@latest",

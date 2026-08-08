@@ -20,16 +20,47 @@ command -v fzf >/dev/null 2>&1 && {
 	source <(kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g')
 }
 
-# Aliases
+# Git Aliases
 alias glo='git log --decorate --oneline --graph'
+alias lg='lazygit'
+alias gc="git commit -m"
+alias gca="git commit -a -m"
+alias gp="git push origin HEAD"
+alias gpu="git pull origin"
+alias gst="git status"
+alias glog="git log --graph --topo-order --pretty='%w(100,0,6)%C(yellow)%h%C(bold)%C(black)%d %C(cyan)%ar %C(green)%an%n%C(bold)%C(white)%s %N' --abbrev-commit"
+alias gdiff="git diff"
+alias gco="git checkout"
+alias gb='git branch'
+alias gba='git branch -a'
+alias gadd='git add'
+alias ga='git add -p'
+alias gcoall='git checkout -- .'
+alias gr='git remote'
+alias gre='git reset'
+
+# Kubernetes Aliases
+alias k='kubectl'
+alias ka="kubectl apply -f"
+alias kg="kubectl get"
+alias kd="kubectl describe"
+alias kdel="kubectl delete"
+alias kl="kubectl logs"
+alias kgpo="kubectl get pod"
+alias kgd="kubectl get deployments"
+alias kc="kubectx"
+alias kns="kubens"
+alias kl="kubectl logs -f"
+alias ke="kubectl exec -it"
+alias kcns='kubectl config set-context --current --namespace'
+
+# Aliases
 alias ls='ls --color=auto -F'
 alias l='ls -lah'
 alias ll='ls -lh'
-alias lg='lazygit'
 alias cat='bat --paging never --theme DarkNeon --style plain'
 alias zssh='ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'
 alias dr='eval "$(devbox global shellenv --recompute)";refresh-global'
-alias k='kubectl'
 
 # ENV files
 

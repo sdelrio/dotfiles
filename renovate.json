@@ -5,8 +5,10 @@
   ],
   "packageRules": [
     {
-      "matchPackagePatterns": ["@latest"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": [
+        "/@latest/"
+      ]
     }
   ]
 }

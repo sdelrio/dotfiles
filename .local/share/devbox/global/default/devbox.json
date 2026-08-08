@@ -21,7 +21,7 @@
     "gum@latest",
     "go@1.26.1",
     "go-task@latest",
-    "htop@latest",
+    "htop@3.5.2",
     "jq@latest",
     "jwt-cli@latest",
     "k0sctl@0.28.0",

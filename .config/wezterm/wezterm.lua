@@ -45,7 +45,7 @@ config.window_background_opacity = 1.0
 --config.window_background_opacity = 0.20
 
 --config.macos_window_background_blur = 50
-config.macos_window_background_blur = 30
+config.macos_window_background_blur = 0
 
 -- Disable the large fancy title header
 config.use_fancy_tab_bar = false
@@ -71,7 +71,7 @@ config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
 -- Dim unfocused windows so the focused one is obvious at a glance.
 local UNFOCUSED_FOREGROUND_TEXT_HSB = { hue = 1.0, saturation = 0.65, brightness = 0.45 }
-local UNFOCUSED_WINDOW_BACKGROUND_OPACITY = 0.62
+local UNFOCUSED_WINDOW_BACKGROUND_OPACITY = 1.00
 
 -- get_config_overrides() hands back a copy, so the current value is never the
 -- same table we last stored; compare the fields instead of the identity.

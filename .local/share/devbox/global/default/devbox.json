@@ -16,7 +16,7 @@
     "gh@2.76.2",
     "gh-dash@4.25.2",
     "git-lfs@latest",
-    "git@latest",
+    "git@2.55.0",
     "glab@latest",
     "gum@latest",
     "go@1.26.5",

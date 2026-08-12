@@ -10,8 +10,10 @@ local function get_appearance()
 end
 
 local function scheme_for_appearance(appearance)
+	-- https://wezterm.org/colorschemes/s/index.html
   if appearance:find("Dark") then
-    return "Solarized Dark - Patched"
+--    return "Solarized Dark - Patched"
+    return "Seafoam Pastel"
   else
     return "Solarized (Light) (Gogh)"
   end

@@ -47,7 +47,7 @@
     "python3Full@latest",
     "ripgrep@latest",
     "starship@latest",
-    "terraform@1.15.3",
+    "terraform@1.15.9",
     "tig@2.5.12",
     "tree-sitter@latest",
     "uv@latest",

@@ -105,8 +105,10 @@ export PATH="$HOME/.local/bin:$PATH"
 # To be able to install NPM packages globally with nix
 # $ cat  ~/.npmrc
 # prefix=~/.npm-packages
-export PATH="$HOME/.npm-packages/bin:$PATH"
-export NODE_PATH="$HOME/.npm-packagges/lib/node_modules"
+#export PATH="$HOME/.npm-packages/bin:$PATH"
+#export NODE_PATH="$HOME/.npm-packagges/lib/node_modules"
+# NOTE: PATH/NODE_PATH for npm-packages now live in ~/.zshenv so that
+# non-interactive shells (Claude Code hooks via /bin/sh) inherits them too.
 
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:$HOME/.cache/lm-studio/bin"

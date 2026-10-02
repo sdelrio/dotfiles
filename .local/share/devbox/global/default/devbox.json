@@ -1,6 +1,6 @@
 {
   "packages": [
-    "atuin@18.15.2",
+    "atuin@latest",
     "bash-preexec@0.6.0",
     "bat@0.26.1",
     "btop@1.4.7",

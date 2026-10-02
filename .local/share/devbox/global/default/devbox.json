@@ -54,7 +54,7 @@
     "uv@latest",
     "vscode@latest",
     "yamllint@latest",
-    "yq@latest",
+    "yq@2.14.0",
     "zoxide@latest"
   ],
   "env": {

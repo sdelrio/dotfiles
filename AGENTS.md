@@ -28,6 +28,7 @@ Goal: one repo that fully provisions terminal, shell, and CLI tooling on any mac
 
 ## Commands
 
+- Execute pending plans one by one: `/plans` (opencode command, `.opencode/command/plans.md`)
 - Enter project env: `direnv allow` (uses `.envrc` -> devbox)
 - Run shell in project env: `devbox shell`
 - No tests, lint, or build — this is config only. Validate edits by re-running `./sync.sh` and opening a new shell.

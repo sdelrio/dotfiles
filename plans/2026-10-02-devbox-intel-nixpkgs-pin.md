@@ -27,9 +27,13 @@ Silicon machines keep latest versions.
   `~/.local/share/devbox/global/default/devbox.json` — no named profiles, no
   conditionals in devbox.json. Per-machine divergence must be handled at the
   repo/sync layer.
-- The old `nixpkgs.commit` devbox.json field is **deprecated**. Documented
-  pinning: per-package flake refs like `"github:nixos/nixpkgs/nixos-26.05#bat"`
-  (branch or commit hash).
+- **Corrected on mbp19i1 (devbox 0.17.1):** the `nixpkgs.commit` field is still
+  functional (warns "legacy format") and is the **only** way to pin the flake's
+  base nixpkgs. It must be a full 40-char commit hash (a branch name is
+  rejected). Per-package flake refs like `"github:nixos/nixpkgs/nixos-26.05#bat"`
+  do **not** pin the base: the generated flake still sets
+  `pkgs = nixpkgs.legacyPackages.<system>` from devbox's default nixpkgs (26.11)
+  and fails evaluating on x86_64-darwin.
 - `include:` in devbox.json only works for plugins, not for composing
   devbox.json files.
 - The global devbox.json is currently **symlinked from the repo** into
@@ -40,7 +44,7 @@ Silicon machines keep latest versions.
 - Renovate (`renovate.json`) manages the repo's global devbox.json; package
   bumps are the source of Intel breakage.
 
-## Design (chosen: Option A — sync.sh renders per platform)
+## Design (chosen: Option A — sync.sh renders per platform; revised after testing)
 
 - The repo's `.local/share/devbox/global/default/devbox.json` stays the single
   canonical file (Renovate manages it as today).
@@ -49,11 +53,14 @@ Silicon machines keep latest versions.
   `~/.local/share/devbox/global/default/devbox.json` and writes the right thing:
   - **Darwin + arm64** or **Linux** → symlink the repo file (behavior identical
     to today).
-  - **Darwin + x86_64 (Intel)** → generate the file, rewriting every package
-    entry `"name@version"` or `"name@latest"` →
-    `"github:nixos/nixpkgs/nixos-26.05#name"`. Versions come from the frozen
-    26.05 channel; `env`, `shell`, scripts pass through unchanged. Also drop
-    the deprecated `"nixpkgs": {}` key from the generated output.
+  - **Darwin + x86_64 (Intel)** → generate the file by (a) setting
+    `"nixpkgs": {"commit": "<40-char nixos-26.05 commit>"}` to pin the base, and
+    (b) stripping the `@version` suffix from every package so the pinned 26.05
+    channel decides the version. Without the base pin, devbox's generated flake
+    still evaluates 26.11 and dies on x86_64-darwin. `env`, `shell`, scripts
+    pass through unchanged.
+- The 26.05 commit is a constant in `sync.sh` (`NIXOS_2605_COMMIT`); bump it to
+  pick up branch fixes (branch names are rejected by devbox).
 - Render tool: `jq` (already in the global profile), fallback to `python3`
   (stdlib `json`) so sync never depends on a broken env.
 
@@ -66,8 +73,11 @@ need); lockfile freeze on Intel (fragile — Renovate bumps re-resolve and break
    - `OS=$(uname -s); ARCH=$(uname -m)`
    - `rm -f ~/.local/share/devbox/global/default/devbox.json`
    - Intel (`Darwin` + `x86_64`): generate via
-     `jq '.packages |= map(capture("^(?<p>[^@]+)") | "github:nixos/nixpkgs/nixos-26.05#\(.p)") | del(.nixpkgs)' <repo_file> > ~/.local/share/devbox/global/default/devbox.json`
+     `jq --arg commit "$NIXOS_2605_COMMIT" '.packages |= map(sub("@.*$"; "")) | .nixpkgs = {commit: $commit}' <repo_file> > ~/.local/share/devbox/global/default/devbox.json`
      (python3 fallback equivalent if jq missing).
+   - Package list fix required for 26.05: `neofetch` and `python3Full` were
+     removed from 26.05 (canonical file now uses `fastfetch` and `python3`);
+     without this the install aborts.
    - Others: `ln -s` repo file → target (as today).
 2. **`.stow-local-ignore`** — make sure the global devbox.json path is never
    stowed directly (sync.sh owns it). Verify actual stow ignore behavior with
@@ -78,9 +88,9 @@ need); lockfile freeze on Intel (fragile — Renovate bumps re-resolve and break
    `./sync.sh`, then `devbox global install`; note the Intel/26.05 rule and
    current focus. Keep AGENTS.md under ~50 lines.
 5. **Roll out** — Intel Mac first: `git pull && ./sync.sh && devbox global
-   install`; confirm the generated lock records `github:nixos/nixpkgs/nixos-26.05`
-   inputs. Then the Apple Silicon and Linux machines (no behavior change; same
-   symlink, same file).
+   install`; confirm the generated lock records `github:NixOS/nixpkgs/4feb8eb8…`
+   inputs (the pinned 26.05 commit). Then the Apple Silicon and Linux machines
+   (no behavior change; same symlink, same file).
 6. **Commit** (Conventional Commits):
    `feat(sync): render global devbox.json per platform, pin intel to nixos-26.05`
 
@@ -98,8 +108,9 @@ need); lockfile freeze on Intel (fragile — Renovate bumps re-resolve and break
 - Version pins in the canonical file (e.g. `bat@0.26.1`) are **ignored on
   Intel** — the 26.05 channel decides. Expected: Intel may get slightly older
   versions than the pin. That IS the desired "fix and never update" behavior.
-- Branch pin (`nixos-26.05`) receives fixes until end of 2026, then freezes.
-  For an absolute freeze later, swap the branch ref for the branch's final
-  commit hash — one-line change.
+- The base pin is a commit hash (devbox rejects branch names), so it does not
+  auto-track `nixos-26.05` fixes. Bump `NIXOS_2605_COMMIT` in `sync.sh`
+  (`git ls-remote … refs/heads/nixos-26.05`) to refresh; the branch freezes at
+  end of 2026, after which the constant is final.
 - Project-local `devbox.json` (wget/teller/stow) left as-is; if it ever breaks
   on Intel, the same rewrite technique applies (out of scope).

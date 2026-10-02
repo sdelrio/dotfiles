@@ -1,7 +1,6 @@
 ---
 title: Platform-aware global devbox config (pin Intel macOS to nixpkgs 26.05)
 date: 2026-10-02
-status: pending
 ---
 
 # Plan: Platform-aware global devbox config (pin Intel macOS to nixpkgs 26.05)

@@ -25,6 +25,7 @@ Goal: one repo that fully provisions terminal, shell, and CLI tooling on any mac
 - Apply changes: `./sync.sh` (stow won't overwrite existing files; it removes `~/.zshrc` first).
 - Update global CLI tools: edit `.local/share/devbox/global/default/devbox.json`, run `./sync.sh`, then `devbox global install`.
 - **Intel macOS** is pinned to nixpkgs **26.05** (last release with `x86_64-darwin`); `sync.sh` renders a generated `devbox.json` (base `nixpkgs.commit` = `NIXOS_2605_COMMIT`, versions stripped) for `Darwin + x86_64` and symlinks the canonical file elsewhere. Bump that constant to refresh 26.05 fixes.
+- **Intel macOS only:** run `devbox global install`, **not** `devbox global update` — update tries to upgrade the version-less 26.05-pinned packages and only logs `nix profile upgrade` warnings before reinstalling the same set.
 
 ## Commands
 

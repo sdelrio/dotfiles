@@ -25,7 +25,7 @@
     "jq@latest",
     "jwt-cli@latest",
     "k0sctl@0.28.0",
-    "k9s@latest",
+    "k9s@0.51.0",
     "kind@0.29.0",
     "krelay@0.2.0",
     "krew@latest",

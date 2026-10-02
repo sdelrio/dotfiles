@@ -29,7 +29,7 @@
     "kind@0.29.0",
     "krelay@0.2.0",
     "krew@latest",
-    "kubectl-klock@0.8.2",
+    "kubectl-klock@0.9.2",
     "kubernetes-helm@3.14.4",
     "kuttl@latest",
     "lazygit@latest",

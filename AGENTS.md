@@ -13,7 +13,7 @@ Goal: one repo that fully provisions terminal, shell, and CLI tooling on any mac
 - `.zshrc` – shell config: devbox global env, completions, git/k8s/ls aliases
 - `.config/` – kitty, wezterm (symlinked manually in sync.sh), tig, direnv, starship, herdr
 - `.local/bin/` – user scripts (`pick-emoji`, `screenshot-wayland`)
-- `.local/share/devbox/global/default/devbox.json` – **global CLI packages** (kubectl, gh, fzf, bat, go, node, etc.)
+- `.local/share/devbox/global/default/devbox.json` – **global CLI packages** (kubectl, gh, fzf, bat, go, node, etc.); canonical file, rendered/symlinked into `$HOME` by `sync.sh`
 - `devbox.json` – project-local packages: wget, teller, stow
 - `scripts/` – `nerdfonts.sh`, `pop-os-tune.sh` (not stowed; see `.stow-local-ignore`)
 - `renovate.json` – automated dependency PRs
@@ -23,8 +23,8 @@ Goal: one repo that fully provisions terminal, shell, and CLI tooling on any mac
 
 - Edit files **in this repo**, never in `$HOME` (stow symlinks make $HOME point here).
 - Apply changes: `./sync.sh` (stow won't overwrite existing files; it removes `~/.zshrc` first).
-- Update global CLI tools: edit `.local/share/devbox/global/default/devbox.json`, then `devbox global install`.
-- Nix must stay compatible with **Intel macOS** — recent work rolled back versions to nixpkgs 26.05 for this reason. Check platform support before bumping packages.
+- Update global CLI tools: edit `.local/share/devbox/global/default/devbox.json`, run `./sync.sh`, then `devbox global install`.
+- **Intel macOS** is pinned to nixpkgs **26.05** (last release with `x86_64-darwin`); `sync.sh` renders a generated `devbox.json` (base `nixpkgs.commit` = `NIXOS_2605_COMMIT`, versions stripped) for `Darwin + x86_64` and symlinks the canonical file elsewhere. Bump that constant to refresh 26.05 fixes.
 
 ## Commands
 

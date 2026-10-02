@@ -36,7 +36,7 @@
     "lima-additional-guestagents@1.1.1",
     "lima@1.1.1",
     "timoni@latest",
-    "magic-wormhole@latest",
+    "magic-wormhole@0.24.0",
     "minio-client@2025-08-13T08-35-41Z",
     "mise@latest",
     "television@latest",

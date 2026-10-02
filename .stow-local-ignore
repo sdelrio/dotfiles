@@ -7,11 +7,13 @@
 /.stow-local-ignore
 /.stowrc
 /README.md
+/AGENTS.md
 /.devbox
 /.vscode
 /devbox.*
 /install.sh
 /renovate.json
 /sync.sh
+/plans
 /xstow.ini
 /DS_Store

@@ -31,7 +31,7 @@
     "krew@latest",
     "kubectl-klock@0.8.2",
     "kubernetes-helm@3.14.4",
-    "kuttl@latest",
+    "kuttl@0.26.0",
     "lazygit@latest",
     "lima-additional-guestagents@1.1.1",
     "lima@1.1.1",

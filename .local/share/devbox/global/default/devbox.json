@@ -22,7 +22,7 @@
     "go@1.26.7",
     "go-task@latest",
     "htop@3.5.2",
-    "jq@latest",
+    "jq@1.8.2",
     "jwt-cli@latest",
     "k0sctl@0.28.0",
     "k9s@latest",

@@ -1,17 +1,28 @@
-
-# https://stackoverflow.com/questions/66338988/complete13-command-not-found-compdef 
-autoload -Uz compinit
+# Fix for slow startup cache when opening multiple tabs/terminals, based on:
+# https://gist.github.com/ctechols/ca1035271ad134841284?permalink_comment_id=5224370#gistcomment-5224370
 () {
-  # (#q...) qualifiers need extendedglob; keep it scoped to this test.
-  # Dump lives in $ZDOTDIR (home-manager), not $HOME, since compinit uses
-  # ${ZDOTDIR:-$HOME}/.zcompdump.
-  setopt local_options extendedglob
-  if [[ -n "${ZDOTDIR:-$HOME}/.zcompdump"(#qN.mh+24) ]]; then
-    compinit
-  else
-    compinit -C
-  fi
-}
+  emulate -L zsh
+  setopt extendedglob
+  autoload -Uz compinit complist
+  local zcd=$1                # compdump
+  local zcdc=$1.zwc           # compiled compdump
+  local zcda=$1.last          # last compilation
+  local zcdl=$1.lock          # lock file
+  local attempts=30
+  [[ -e $zcd ]] || : > $zcd
+  while (( attempts-- > 0 )) && ! ln $zcd $zcdl 2> /dev/null; do sleep 0.1; done
+  {
+    if [[ ! -e $zcda || ! -s $zcd || -n $zcda(#qN.mh+24) ]]; then
+      compinit -i -d $zcd
+      : > $zcda
+    else
+      compinit -C -d $zcd
+    fi
+    [[ ! -f $zcdc || $zcd -nt $zcdc ]] && rm -f $zcdc && zcompile $zcd &!
+  } always {
+    rm -f $zcdl
+  }
+} ${ZDOTDIR:-$HOME}/.zcompdump
 
 setopt HIST_IGNORE_ALL_DUPS
 

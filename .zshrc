@@ -1,7 +1,17 @@
 
 # https://stackoverflow.com/questions/66338988/complete13-command-not-found-compdef 
 autoload -Uz compinit
-compinit
+() {
+  # (#q...) qualifiers need extendedglob; keep it scoped to this test.
+  # Dump lives in $ZDOTDIR (home-manager), not $HOME, since compinit uses
+  # ${ZDOTDIR:-$HOME}/.zcompdump.
+  setopt local_options extendedglob
+  if [[ -n "${ZDOTDIR:-$HOME}/.zcompdump"(#qN.mh+24) ]]; then
+    compinit
+  else
+    compinit -C
+  fi
+}
 
 setopt HIST_IGNORE_ALL_DUPS
 

@@ -1,5 +1,15 @@
+setopt HIST_IGNORE_ALL_DUPS
+
+# Devbox prompt
+DEVBOX_no_prompt=TRUE
+
+# Devbox global
+eval "$(devbox global shellenv --init-hook)"
+
 # Fix for slow startup cache when opening multiple tabs/terminals, based on:
 # https://gist.github.com/ctechols/ca1035271ad134841284?permalink_comment_id=5224370#gistcomment-5224370
+# Runs AFTER the devbox eval so $fpath is final: this is the shell's single
+# compinit (NOSYSZSHRC skips /etc/zshrc's, devbox's zshrc no longer runs one).
 () {
   emulate -L zsh
   setopt extendedglob
@@ -24,22 +34,31 @@
   }
 } ${ZDOTDIR:-$HOME}/.zcompdump
 
-setopt HIST_IGNORE_ALL_DUPS
-
-# Devbox prompt
-DEVBOX_no_prompt=TRUE
-
-# Devbox global
-eval "$(devbox global shellenv --init-hook)"
-
-# Completions
-which devbox >/dev/null && source <(devbox completion zsh)
-which docker >/dev/null && source <(docker completion zsh)
-#which kubectl >/dev/null && source <(kubectl completion zsh)
-## https://github.com/junegunn/fzf/wiki/examples#kubectl
-command -v fzf >/dev/null 2>&1 && {
-	source <(kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g')
+# Completions: generated once to disk and sourced from cache afterwards.
+# Each generator is an external binary (~0.1-0.3s); spawning them on every
+# shell was the second biggest startup cost. A cache older than 24h is
+# regenerated in the background and picked up by the next shell.
+_cached_completion() {
+  emulate -L zsh
+  setopt extendedglob
+  local name=$1; shift
+  local dir=${ZDOTDIR:-$HOME}/.zsh-completions
+  local cache=$dir/$name.zsh
+  [[ -d $dir ]] || mkdir -p $dir
+  if [[ ! -s $cache ]]; then
+    "$@" >| $cache 2>/dev/null
+  elif [[ -n $cache(#qN.mh+24) ]]; then
+    ( "$@" >| $cache 2>/dev/null ) &!
+  fi
+  [[ -s $cache ]] && source $cache
 }
+command -v devbox >/dev/null 2>&1 && _cached_completion devbox devbox completion zsh
+command -v docker >/dev/null 2>&1 && _cached_completion docker docker completion zsh
+_kubectl_completion() {
+  kubectl completion zsh | sed 's#${requestComp} 2>/dev/null#${requestComp} 2>/dev/null | head -n -1 | fzf  --multi=0 #g'
+}
+command -v kubectl >/dev/null 2>&1 && command -v fzf >/dev/null 2>&1 && _cached_completion kubectl _kubectl_completion
+unfunction _kubectl_completion _cached_completion 2>/dev/null
 
 # Git Aliases
 

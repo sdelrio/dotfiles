@@ -3,8 +3,9 @@ setopt HIST_IGNORE_ALL_DUPS
 # Devbox prompt
 DEVBOX_no_prompt=TRUE
 
-# Devbox global already in 
-#eval "$(devbox global shellen --init-hook)"
+# Devbox global env (PATH + DEVBOX_* vars + refresh-global). Evaluated per shell
+# so it's deterministic on every machine/terminal, not inherited from a parent.
+eval "$(devbox global shellenv --init-hook)"
 
 # Fix for slow startup cache when opening multiple tabs/terminals, based on:
 # https://gist.github.com/ctechols/ca1035271ad134841284?permalink_comment_id=5224370#gistcomment-5224370

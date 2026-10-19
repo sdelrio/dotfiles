@@ -1,5 +1,6 @@
 {
   "packages": {
+    "awscli2@latest": {},
     "atuin@latest": {},
     "bash-preexec@0.6.0": {},
     "bat@0.26.1": {},

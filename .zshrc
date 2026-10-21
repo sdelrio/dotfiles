@@ -90,6 +90,15 @@ ghist() {
   done
 }
 
+# Starship shows $AWS_FLAG via env_var.AWS_FLAG
+_aws_flag() {
+  case "$AWS_PROFILE" in
+    *Stage*|*Prod*|*Network*) export AWS_FLAG="🚩" ;;
+    *) unset AWS_FLAG ;;
+  esac
+}
+
+# Git Aliases
 alias glo='git log --decorate --oneline --graph'
 alias lg='lazygit'
 alias gc="git commit -m"

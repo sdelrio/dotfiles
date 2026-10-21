@@ -7,6 +7,8 @@ default = ""
 format = ""
 #format = "debugK: [$env_value]($style) "
 
+[env_var.AWS_FLAG]
+format = "$env_value "
 
 [custom.kubeconfig_basename]
 command = "echo ${KUBECONFIG##*/} | sed 's/\\.cfg$//'"
@@ -26,7 +28,13 @@ min_time = 5000
 format = 'took [$duration](bold yellow)'
 
 [aws]
-disabled = true
+symbol = ""
+format = '\[[$symbol($profile)(|$region)]($style)\]'
+
+[aws.region_aliases]
+eu-central-1 = 'EU1'
+us-east-1 = 'US1'
+us-west-2 = 'US2'
 
 [azure]
 format = 'on [$symbol($subscription)]($style) '
@@ -82,8 +90,8 @@ disabled = true
 [nix_shell]
 disabled = false
 impure_msg = 'devbox'
-format = 'via [$symbol$state](bold purple) '
 symbol =  '☃️ '
+format = 'via [$symbol](bold purple)'
 
 [sudo]
 disabled = false

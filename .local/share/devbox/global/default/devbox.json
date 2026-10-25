@@ -1,61 +1,120 @@
 {
   "packages": {
-    "awscli2@latest": {},
+    // atuin - shell history in a searchable, syncable SQLite database
     "atuin@latest": {},
+    // awscli2 - Amazon Web Services command line interface
+    "awscli2@latest": {},
+    // bash-preexec - bash pre-exec hooks used by atuin/starship in bash
     "bash-preexec@0.6.0": {},
+    // bat - cat clone with syntax highlighting and git integration
     "bat@0.26.1": {},
+    // btop - terminal resource monitor (CPU, memory, disk, network)
     "btop@1.4.7": {},
+    // chart-testing - lint and test Helm charts (ct)
     "chart-testing@3.14.0": {},
+    // cheat - create and view cheatsheets for commands
     "cheat@latest": {},
+    // colima - container runtimes (docker/k8s) in lightweight macOS VMs
     "colima@0.8.1": {},
+    // cookiecutter - generate projects from cookiecutter templates
     "cookiecutter@2.6.0": {},
+    // copier - render and update projects from copier templates
     "copier@latest": {},
+    // delta - syntax-highlighting diff pager for git
     "delta@0.19.2": {},
+    // diffnav - TUI to browse and review git diffs
     "diffnav@0.11.0": {},
+    // eza - modern ls alternative with icons and git status
     "eza@0.23.4": {},
-    "fzf@latest": {},
-    "gh@2.76.2": {},
-    "gh-dash@4.25.0": {},
-    "git-lfs@latest": {},
-    "git@latest": {},
-    "glab@latest": {},
-    "gum@latest": {},
-    "go@1.26.7": {},
-    "go-task@latest": {},
-    "htop@3.5.2": {},
-    "jq@latest": {},
-    "jwt-cli@latest": {},
-    "k0sctl@0.28.0": {},
-    "k9s@latest": {},
-    "kind@0.29.0": {},
-    "krelay@0.2.0": {},
-    "krew@latest": {},
-    "kubectl-klock@0.8.2": {},
-    "kubernetes-helm@3.14.4": {},
-    "kuttl@latest": {},
-    "lazygit@latest": {},
-    "lima-additional-guestagents@1.1.1": {},
-    "lima@1.1.1": {},
-    "timoni@latest": {},
-    "magic-wormhole@latest": {},
-    "minio-client@2025-08-13T08-35-41Z": {},
-    "mise@latest": {},
-    "television@latest": {},
-    "ncdu@latest": {},
+    // fastfetch - fast system information fetch
     "fastfetch@latest": {},
+    // fzf - command-line fuzzy finder
+    "fzf@latest": {},
+    // gh - GitHub CLI
+    "gh@2.76.2": {},
+    // gh-dash - GitHub dashboard TUI for pull requests and issues
+    "gh-dash@4.25.0": {},
+    // git - the version control system
+    "git@latest": {},
+    // git-lfs - Git large file storage extension
+    "git-lfs@latest": {},
+    // glab - GitLab CLI
+    "glab@latest": {},
+    // go - the Go toolchain
+    "go@1.26.7": {},
+    // go-task - Taskfile-based task runner
+    "go-task@latest": {},
+    // gum - styled shell scripts (prompts, spinners, formatting)
+    "gum@latest": {},
+    // htop - interactive process viewer
+    "htop@3.5.2": {},
+    // jq - command-line JSON processor
+    "jq@latest": {},
+    // jwt-cli - decode and encode JWT tokens
+    "jwt-cli@latest": {},
+    // k0sctl - deploy and manage k0s Kubernetes clusters
+    "k0sctl@0.28.0": {},
+    // k9s - Kubernetes cluster TUI
+    "k9s@latest": {},
+    // kind - run local Kubernetes clusters in Docker
+    "kind@0.29.0": {},
+    // krelay - faster drop-in replacement for kubectl port-forward
+    "krelay@0.2.0": {},
+    // krew - kubectl plugin manager
+    "krew@latest": {},
+    // kubectl-klock - kubectl plugin showing how long resources have existed
+    "kubectl-klock@0.8.2": {},
+    // kubernetes-helm - Kubernetes package manager
+    "kubernetes-helm@3.14.4": {},
+    // kuttl - KUbernetes Test TooL for declarative e2e tests
+    "kuttl@latest": {},
+    // lazygit - terminal UI for git
+    "lazygit@latest": {},
+    // lima - Linux virtual machines on macOS
+    "lima@1.1.1": {},
+    // lima-additional-guestagents - guest agents Lima installs into its VMs
+    "lima-additional-guestagents@1.1.1": {},
+    // magic-wormhole - send files to another computer with a short code
+    "magic-wormhole@latest": {},
+    // minio-client - MinIO/S3 compatible object storage client (mc)
+    "minio-client@2025-08-13T08-35-41Z": {},
+    // mise - dev tool version manager and task runner
+    "mise@latest": {},
+    // ncdu - interactive disk usage analyzer
+    "ncdu@latest": {},
+    // neovim - hyperextensible Vim-based text editor
     "neovim@0.10.4": {},
+    // nodejs - Node.js JavaScript runtime
     "nodejs@24.11.1": {},
-    "python3@latest": { "disable_plugin": true },
+    // pet - snippet manager for the command line
     "pet@1.0.1": {},
+    // python3 - Python 3 interpreter (plugin disabled: no auto venv)
+    "python3@latest": { "disable_plugin": true },
+    // ripgrep - fast recursive regex search (rg)
     "ripgrep@latest": {},
+    // starship - minimal, fast cross-shell prompt
     "starship@latest": {},
+    // television - fast fuzzy finder with channels for many sources
+    "television@latest": {},
+    // terraform - infrastructure as code provisioning tool
     "terraform@1.15.3": {},
+    // tig - text-mode interface for git
     "tig@2.5.12": {},
+    // timoni - CUE-based Kubernetes package manager
+    "timoni@latest": {},
+    // tree-sitter - incremental parsing library and CLI
     "tree-sitter@latest": {},
+    // uv - fast Python package and project manager
     "uv@latest": {},
+    // vscode - Visual Studio Code editor (with code CLI)
     "vscode@latest": {},
+    // witr - trace why a process, port, container or file is running
+    "witr@latest": {},
+    // yamllint - YAML linter
     "yamllint@latest": {},
+    // yq - command-line YAML/JSON/XML processor
     "yq@latest": {},
+    // zoxide - smarter cd command that learns your habits
     "zoxide@latest": {}
   },
   "env": {

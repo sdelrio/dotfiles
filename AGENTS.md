@@ -38,6 +38,7 @@ Goal: one repo that fully provisions terminal, shell, and CLI tooling on any mac
 
 - Commits follow Conventional Commits with scope: `feat(zshrc):`, `fix(herdr):`, `chore(deps):` (deps handled by Renovate).
 - `devbox.lock` and `.devbox/` are gitignored — don't commit them.
+- The global `devbox.json` is JSONC: every package gets a `//` one-line description of what the tool does. `sync.sh` strips comments before rendering the Intel macOS file (jq/python are strict JSON). `devbox add` may reformat and drop them — re-add if needed.
 - Personal/unstowed files belong in `.stow-local-ignore`.
 
 ## Current Focus
